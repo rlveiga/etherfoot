@@ -55,8 +55,29 @@ exports.getPlayers = async function(req, res, next) {
 
 exports.createPlayer = async function(req, res) {
     const player = req.body
+    const player_price = calculatePlayerPrice(player)
 
-    await PlayerService.createPlayer(ABI.player_abi, player)
+    await PlayerService.createPlayer(player, player_price)
     .then(response => {
+        console.log('Created!')
+    }, error => {
+        console.log(error)
     })
+
+    return
+}
+
+calculatePlayerPrice = function(player) {
+    console.log(player)
+    if(player.pos == 4) {
+        return player.att * 4 + player.pass * 2 + player.phys * 3 + player.def * 1
+    }
+    
+    else if(player.pos == 3) {
+        return player.att * 2 + player.pass * 4 + player.phys * 2 + player.def * 2
+    }
+    
+    else if(player.pos == 2) {
+        return player.att * 2 + player.pass * 2 + player.phys * 1 + player.def * 5
+    }
 }

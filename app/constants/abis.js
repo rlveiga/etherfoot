@@ -10,30 +10,6 @@ module.exports = {
             "type": "function"
         },
         {
-            "constant": false,
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "_value",
-                    "type": "uint256"
-                }
-            ],
-            "name": "listPlayer",
-            "outputs": [],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": false,
-            "inputs": [],
-            "name": "unlistPlayer",
-            "outputs": [],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
             "inputs": [
                 {
                     "internalType": "string",
@@ -47,7 +23,7 @@ module.exports = {
                 },
                 {
                     "internalType": "uint256",
-                    "name": "_shooting",
+                    "name": "_attacking",
                     "type": "uint256"
                 },
                 {
@@ -57,12 +33,17 @@ module.exports = {
                 },
                 {
                     "internalType": "uint256",
-                    "name": "_dribbling",
+                    "name": "_defending",
                     "type": "uint256"
                 },
                 {
                     "internalType": "uint256",
-                    "name": "_defending",
+                    "name": "_physical",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_value",
                     "type": "uint256"
                 }
             ],
@@ -73,224 +54,13 @@ module.exports = {
         {
             "constant": true,
             "inputs": [],
-            "name": "defending_power",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "dribbling_power",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "getContractValue",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "getIsListed",
+            "name": "player",
             "outputs": [
                 {
                     "internalType": "bool",
-                    "name": "",
+                    "name": "has_owner",
                     "type": "bool"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "getListedValue",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "getName",
-            "outputs": [
-                {
-                    "internalType": "string",
-                    "name": "",
-                    "type": "string"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "getOwner",
-            "outputs": [
-                {
-                    "internalType": "address",
-                    "name": "",
-                    "type": "address"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "getPosition",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "getPower",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "listed",
-            "outputs": [
-                {
-                    "internalType": "bool",
-                    "name": "",
-                    "type": "bool"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "listed_value",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "name",
-            "outputs": [
-                {
-                    "internalType": "string",
-                    "name": "",
-                    "type": "string"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "owner",
-            "outputs": [
-                {
-                    "internalType": "address payable",
-                    "name": "",
-                    "type": "address"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "passing_power",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "",
-                    "type": "address"
-                }
-            ],
-            "name": "players",
-            "outputs": [
+                },
                 {
                     "internalType": "string",
                     "name": "name",
@@ -298,12 +68,32 @@ module.exports = {
                 },
                 {
                     "internalType": "uint256",
-                    "name": "overall",
+                    "name": "position",
                     "type": "uint256"
                 },
                 {
                     "internalType": "uint256",
-                    "name": "position",
+                    "name": "attacking_pwr",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "passing_pwr",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "defending_pwr",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "physical_pwr",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "overall",
                     "type": "uint256"
                 },
                 {
@@ -312,63 +102,13 @@ module.exports = {
                     "type": "bool"
                 },
                 {
-                    "internalType": "address",
+                    "internalType": "address payable",
                     "name": "owner",
                     "type": "address"
                 },
                 {
                     "internalType": "uint256",
-                    "name": "listed_value",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "contract_value",
-                    "type": "uint256"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "position",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "power_avg",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "shooting_power",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
+                    "name": "value",
                     "type": "uint256"
                 }
             ],
