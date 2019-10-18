@@ -1,0 +1,88 @@
+body {
+  display: inline;
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #B04632;
+}
+
+.content {
+  text-align: center;
+  color: whitesmoke;
+}
+
+.content h1 {
+  margin: 0px;
+}
+
+.title {
+  font-family: 'Lobster';
+  font-size: 64px;
+}
+
+.content h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: lighter;
+}
+
+.player-list {
+  list-style: none;
+  padding: 0; 
+}
+
+.creator {
+  width: 80%;
+  padding: 0px 10px 0px 10px;
+  display: inline-block;
+  vertical-align: center;
+  border-radius: 7px;
+}
+
+.creator-row {
+  background-color: #C9867B;
+  border-radius: 4px;
+  padding: 4px 5px 0px 8px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.creator-row-top {
+  display: flex;
+  border-radius: 4px;
+}
+
+.creator-row-bottom {
+  height: 22px;
+  width: 50px;
+}
+
+.input-container {
+  display: flex;
+  background-color: #B04632;
+  width: 50px;
+  height: 38px;
+  color: rgb(202, 201, 201);
+  font-family: Roboto;
+  border-radius: 3px;
+}
+
+input {
+  border-style: none;
+  border-radius: 3px;
+  width: 100%;
+  opacity: 0.9;
+  padding-left: 3px;
+}
+
+.create-btn-container {
+  flex: 0.1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 12px;
+}
+
+.create-btn {
+  width: 100%;
+  height: 25px;
+  border-radius: 4px;
+}

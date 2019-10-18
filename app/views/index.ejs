@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Etherfoot</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+      @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1 class="title">Etherfoot</h1>
+
+    </div>
+  </body>
+
+  <script>
+    if (typeof window.ethereum !== 'undefined'
+      || (typeof window.web3 !== 'undefined')) {
+
+    // Web3 browser user detected, getting the provider.
+    const provider = window['ethereum'] || window.web3.currentProvider
+    
+    provider.enable()
+    }
+  </script>
+</html>
