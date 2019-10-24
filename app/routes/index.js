@@ -7,6 +7,7 @@ router.get('/', PlayerController.renderHome)
 router.get('/players', PlayerController.renderPlayerPage)
 router.post('/players', PlayerController.createPlayer)
 router.post('/list_player/:index', PlayerController.listPlayer)
+router.post('/unlist_player/:index', PlayerController.unlistPlayer)
 
 module.exports = router;
 

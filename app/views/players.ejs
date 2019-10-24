@@ -65,6 +65,12 @@
             method: 'post'
           })
         })
+
+        $(".unlist-btn").click(async function() {
+          await fetch(`/unlist_player/${$(".unlist-btn").index(this)}`, {
+            method: 'post'
+          })
+        })
       });
     </script>
   </body>

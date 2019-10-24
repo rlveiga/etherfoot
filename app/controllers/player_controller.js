@@ -85,3 +85,13 @@ exports.listPlayer = async function(req, res) {
     })
     
 }
+
+exports.unlistPlayer = async function(req, res) {
+    await PlayerService.unlistPlayer(players[req.params.index].contract_address)
+    .then(response => {
+        console.log(response)
+    }, error => {   
+        console.log(error)
+    })
+    
+}

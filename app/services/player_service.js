@@ -65,6 +65,23 @@ class PlayerService {
             throw error;
         })
     }
+
+    async unlistPlayer(address) {
+        const contract = new web3.eth.Contract(ABI.player_abi, address)
+
+        console.log(contract)
+        return await contract.methods.unlistPlayer().send({
+            from: web3.eth.defaultAccount,
+            gas: 3000000
+        })
+        .then(response => {
+            console.log(response)
+            return response;
+        })
+        .catch(error => {
+            throw error;
+        })
+    }
 }
 
 module.exports = new PlayerService()
