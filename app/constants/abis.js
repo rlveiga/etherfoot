@@ -1,24 +1,6 @@
 module.exports = {
     player_abi: [
         {
-            "constant": false,
-            "inputs": [],
-            "name": "buyPlayer",
-            "outputs": [],
-            "payable": true,
-            "stateMutability": "payable",
-            "type": "function"
-        },
-        {
-            "constant": false,
-            "inputs": [],
-            "name": "listPlayer",
-            "outputs": [],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
             "inputs": [
                 {
                     "internalType": "string",
@@ -43,7 +25,16 @@ module.exports = {
         {
             "constant": false,
             "inputs": [],
-            "name": "unlistPlayer",
+            "name": "buyPlayer",
+            "outputs": [],
+            "payable": true,
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [],
+            "name": "listPlayer",
             "outputs": [],
             "payable": false,
             "stateMutability": "nonpayable",
@@ -83,10 +74,24 @@ module.exports = {
                     "internalType": "uint256",
                     "name": "contract_value",
                     "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "contract_address",
+                    "type": "address"
                 }
             ],
             "payable": false,
             "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [],
+            "name": "unlistPlayer",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
             "type": "function"
         }
     ],

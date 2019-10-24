@@ -8,6 +8,7 @@ var app = require('../app/app');
 var debug = require('debug')('etherfoot:server');
 var http = require('http');
 
+var web3 = require('../web3');
 /**
  * Get port from environment and store in Express.
  */
@@ -81,7 +82,20 @@ function onError(error) {
  * Event listener for HTTP server "listening" event.
  */
 
-function onListening() {
+async function onListening() {
+  let accounts = []
+
+  await web3.eth.getAccounts()
+  .then(response => {
+      accounts = response
+  }, error => {
+      console.log(error.response)
+  })
+
+  console.log(accounts)
+
+  web3.eth.defaultAccount = accounts[0]
+
   var addr = server.address();
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
