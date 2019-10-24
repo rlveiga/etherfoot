@@ -10,24 +10,34 @@ const position_map = {
 }
 
 let players = []
-
-exports.getPlayerInfo = async function(req, res, next) { 
-    let player = [];
-
-    await PlayerService.getPlayerInfo(ABI.player_abi, req.params.address)
-    .then(response => {
-        player.push(response)
-    }, error => {
-        console.log(error)
-    });
-
-    console.log(player)
-
-    return res.render('index', { title: 'Etherfoot', players: player});
-}
+let market_players = []
 
 exports.renderHome = async function(req, res, next) {
     return res.render('index')
+}
+
+exports.renderMarketPage = async function(req, res) {
+    market_players = []
+
+    await PlayerService.getListedPlayers()
+    .then(async response => {
+        for(var i = 0; i < response.length; i++) {
+            if(response[i] != '0x0000000000000000000000000000000000000000') {
+                await PlayerService.getPlayerInfo(response[i])
+                .then(response => {
+                    market_players.push(response)
+                }, error => {
+                    console.log(error)
+                })
+            }
+        }
+
+        console.log(market_players)
+    }, error => {
+        console.log(error)
+    })
+
+    return res.render('market', { market_players, address: web3.eth.defaultAccount })
 }
 
 exports.renderPlayerPage = async function(req, res, next) {

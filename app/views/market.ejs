@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Etherfoot - Market</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+      @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <a style="text-decoration: none;" href="/"><h1 class="title">Etherfoot</h1></a>
+
+      <h3 class="section-title">Listed players</h3>
+
+      <ul class="player-list">
+        <% market_players.forEach((player, index) => { %>
+          <li class="player-list-item"><span class="player-ovr"><%=player.overall%></span> <%=player.name%> <%=player.position%>
+            <span>
+              <%if(player.owner != address) {%>
+                <button class="unlist-btn">Buy</button>
+              <% } %>
+            </span>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -27,6 +27,18 @@ class PlayerService {
         })
     }
 
+    async getListedPlayers() {
+        const registry = new web3.eth.Contract(ABI.registry_abi, "0xE417B8038d1bB2D6F0FcB89817eF217f0180b81D")
+        
+        return await registry.methods.getListedPlayers().call()
+        .then(response => {
+            return response;
+        })
+        .catch(error => {
+            throw error;
+        })
+    }
+
     async createPlayer(player, player_price) {
 
         const contract = new web3.eth.Contract(ABI.player_abi, null, {
