@@ -2,7 +2,6 @@ body {
   display: inline;
   margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #B04632;
 }
 
 .content {
@@ -17,6 +16,11 @@ body {
 .title {
   font-family: 'Lobster';
   font-size: 64px;
+  color: #B04632;
+}
+
+.section-title {
+  color: #B04632;
 }
 
 .content h3 {
@@ -29,6 +33,14 @@ body {
   padding: 0; 
 }
 
+.player-list {
+  color: #B04632;
+}
+
+.player-ovr {
+  font-weight: bold;
+}
+
 .creator {
   width: 80%;
   padding: 0px 10px 0px 10px;
@@ -38,7 +50,6 @@ body {
 }
 
 .creator-row {
-  background-color: #C9867B;
   border-radius: 4px;
   padding: 4px 5px 0px 8px;
   margin-top: 5px;
@@ -57,24 +68,25 @@ body {
 
 .input-container {
   display: flex;
-  background-color: #B04632;
   width: 50px;
   height: 38px;
-  color: rgb(202, 201, 201);
-  font-family: Roboto;
-  border-radius: 3px;
+  color: yellow;
+  border-bottom: 2px solid #B04632;
 }
 
 input {
   border-style: none;
   border-radius: 3px;
   width: 100%;
-  opacity: 0.9;
   padding-left: 3px;
+  color: #B04632;
 }
 
+*:focus {
+  outline: none;
+}
 .create-btn-container {
-  flex: 0.1;
+  flex: 0.4;
   display: flex;
   align-items: center;
   justify-content: center;

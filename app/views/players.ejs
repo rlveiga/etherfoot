@@ -12,15 +12,40 @@
     <div class="content">
       <h1 class="title">Etherfoot</h1>
 
-      <h3>Players</h3>
+      <h3 class="section-title">Create players</h3>
+
+      <div class="creator">
+        <form name="creator-form" method="post">
+          <div class = "creator-row">
+            <div class="creator-row-top">            
+              <div class="input-container" style="flex: 0.4; margin-right: 5px;">
+                <input type="text" name="name" placeholder="Nome">
+              </div>
+              <div class="input-container" style="flex: 0.1; margin-right: 5px;">
+                <input type="text" name="pos" placeholder="Pos.">
+              </div>
+              <div class="input-container" style="flex: 0.1;">
+                  <input type="text" name="overall" placeholder="Qualidade">
+              </div>
+              <div class="create-btn-container">
+                <button class="create-btn" style = "width: 95px;">Criar</button>
+              </div>
+            </div>
+
+            <div class="creator-row-bottom"></div>
+          </div>
+        <form>
+      </div>
+
+      <h3 class="section-title">Players</h3>
 
       <ul class="player-list">
-        <% players.forEach((player) => {
-          %>
+        <% players.forEach((player) => { %>
           <li class="player-list-item"><span class="player-ovr"><%=player.overall%></span> <%=player.name%> <%=player.position%></li>
-          <%
-        }) %>
+        <% }) %>
       </ul>
+
+      <h5 style="color: #000;">Squad value: <%=squad_value %> ETH</h5>
 
     </div>
   </body>

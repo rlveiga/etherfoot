@@ -32,52 +32,39 @@ exports.renderHome = async function(req, res, next) {
     return res.render('index')
 }
 
-exports.getPlayers = async function(req, res, next) {
-    console.log(ABI.player_abi)
+exports.renderPlayerPage = async function(req, res, next) {
     let players = []
+    let squad_value = 0
 
-    await PlayerService.getPlayers(ABI.registry_abi, req.params.address)
+    await PlayerService.getPlayers()
     .then(async response => {
         for(var i = 0; i < response.length; i++) {
-            await PlayerService.getPlayerInfo(ABI.player_abi, response[i])
+            await PlayerService.getPlayerInfo(response[i])
             .then(response => {
+                squad_value = squad_value + parseFloat(web3.utils.fromWei(response.contract_value))
+
                 players.push(response)
             }, error => {
-                console.log(error)
+                console.log('erro1')
             });
         }
     }, error => {
-        console.log(error)
+        console.log('erro 2')
     })
-
-    return res.render('players', { players })
+    
+    return res.render('players', { players,  squad_value })
 }
 
 exports.createPlayer = async function(req, res) {
     const player = req.body
-    const player_price = calculatePlayerPrice(player)
+    const player_price = player.overall * 10000000000000000
 
     await PlayerService.createPlayer(player, player_price)
     .then(response => {
-        console.log('Created!')
+        console.log(response)
     }, error => {
         console.log(error)
     })
 
-    return
-}
-
-calculatePlayerPrice = function(player) {
-    console.log(player)
-    if(player.pos == 4) {
-        return player.att * 4 + player.pass * 2 + player.phys * 3 + player.def * 1
-    }
-    
-    else if(player.pos == 3) {
-        return player.att * 2 + player.pass * 4 + player.phys * 2 + player.def * 2
-    }
-    
-    else if(player.pos == 2) {
-        return player.att * 2 + player.pass * 2 + player.phys * 1 + player.def * 5
-    }
+    res.redirect('back')
 }

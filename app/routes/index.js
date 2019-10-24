@@ -4,11 +4,8 @@ var router = express.Router();
 var PlayerController = require('../controllers/player_controller')
 
 router.get('/', PlayerController.renderHome)
-router.get('/players', PlayerController.getPlayers)
-router.get('/create', (req, res) => {
-    res.render('create')
-})
-router.post('/create', PlayerController.createPlayer)
+router.get('/players', PlayerController.renderPlayerPage)
+router.post('/players', PlayerController.createPlayer)
 
 module.exports = router;
 

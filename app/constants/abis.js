@@ -10,6 +10,15 @@ module.exports = {
             "type": "function"
         },
         {
+            "constant": false,
+            "inputs": [],
+            "name": "listPlayer",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
             "inputs": [
                 {
                     "internalType": "string",
@@ -23,27 +32,7 @@ module.exports = {
                 },
                 {
                     "internalType": "uint256",
-                    "name": "_attacking",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "_passing",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "_defending",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "_physical",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "_value",
+                    "name": "_overall",
                     "type": "uint256"
                 }
             ],
@@ -52,15 +41,19 @@ module.exports = {
             "type": "constructor"
         },
         {
+            "constant": false,
+            "inputs": [],
+            "name": "unlistPlayer",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
             "constant": true,
             "inputs": [],
             "name": "player",
             "outputs": [
-                {
-                    "internalType": "bool",
-                    "name": "has_owner",
-                    "type": "bool"
-                },
                 {
                     "internalType": "string",
                     "name": "name",
@@ -69,26 +62,6 @@ module.exports = {
                 {
                     "internalType": "uint256",
                     "name": "position",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "attacking_pwr",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "passing_pwr",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "defending_pwr",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "physical_pwr",
                     "type": "uint256"
                 },
                 {
@@ -108,7 +81,7 @@ module.exports = {
                 },
                 {
                     "internalType": "uint256",
-                    "name": "value",
+                    "name": "contract_value",
                     "type": "uint256"
                 }
             ],
